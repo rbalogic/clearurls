@@ -64,11 +64,11 @@ class URLHashParams {
     toString() {
         const rtn = [];
         this._params.forEach((key, value) => {
-            if (value !== null) {
-                rtn.push(key + '=' + value);
+            if (value === null) {
+                rtn.push(key);
             }
             else {
-                rtn.push(key);
+                rtn.push(key + '=' + value);
             }
         });
         return rtn.join('&');
