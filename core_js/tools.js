@@ -255,7 +255,7 @@ function setDisabledDomain(hostname, disabled = true) {
         domains.delete(normalizedHostname);
     }
 
-    storage.disabledDomains = Array.from(domains).sort();
+    storage.disabledDomains = Array.from(domains).sort((left, right) => left.localeCompare(right));
 
     return true;
 }

@@ -228,7 +228,7 @@ function toggleCurrentSite() {
             disabledDomains = disabledDomains.filter((domain) => domain !== currentHostname);
         } else {
             disabledDomains.push(currentHostname);
-            disabledDomains.sort();
+            disabledDomains.sort((left, right) => left.localeCompare(right));
         }
 
         updateSiteSection();
